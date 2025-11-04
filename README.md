@@ -1,95 +1,79 @@
-# azure-copilot-challenge-esg
-# 🤖 Agente ESG: Calculadora de Empregabilidade Verde (Azure Frontier Girls Challenge)
+# 🤖 ESG Agent: Green Employment Cost Calculator
 
 ![Azure](https://img.shields.io/badge/Azure-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 
-Este é o projeto de entrega para o "Build Your First Copilot Challenge" do programa Azure Frontier Girls, da Microsoft e WoMakersCode.
+This project is a functional AI Copilot built as part of the **Azure Frontier Girls Challenge** by Microsoft & WoMakersCode. It serves as a practical demonstration of building an "AI Agent" with custom tools, leveraging Azure OpenAI services.
 
 ---
 
-## 1. Descrição do Projeto e Objetivo do Agente
-*(Requisito de Avaliação 4.a)*
+## 1. Project Objective & Problem
+*(Addresses technical product engineering & AI architecture)*
 
-### O Problema
-Gestores públicos e organizações do terceiro setor precisam tomar decisões baseadas em dados para criar políticas de sustentabilidade e inclusão social. No entanto, estimar rapidamente o custo de programas de empregabilidade verde é um desafio que muitas vezes depende de planilhas complexas.
+### The Problem
+Public policy managers and ESG (Environmental, Social, Governance) analysts often need to make quick, data-driven decisions to fund sustainability and social inclusion programs. However, rapidly estimating the cost of initiatives, such as green employment programs, is a complex task that often relies on manual calculations.
 
-### O Objetivo do Agente (O Produto)
-Este projeto é um **agente de IA (copiloto)** que atua como um "Assistente de Políticas Públicas ESG".
+### The Agent's Objective (The Product)
+This project is an **AI Agent (Copilot)** that acts as an "ESG Public Policy Assistant."
 
-Seu objetivo é fornecer uma interface de conversação simples para que um gestor público possa estimar o custo de um programa de empregabilidade verde, bastando perguntar em linguagem natural.
+Its goal is to provide a simple, conversational interface for a manager to estimate the cost of a green employment program. The agent uses a custom-built "Tool" to perform the business logic (the calculation), demonstrating an architecture where the AI (the "brain") uses specialized tools (the "muscles") to solve a problem.
 
-## 2. Demonstração (A Ação Funcional)
-*(Requisito de Avaliação 4.b - Prints de respostas, fluxo e execução)*
+## 2. Architecture & Execution Flow
+*(Demonstrates understanding of AI systems, as requested in the Motorola feedback)*
 
-A "1 ação funcional" deste agente é um **cálculo** de custo. O agente usa uma "Tool" (ferramenta) de Python personalizada para executar a lógica de negócio.
+This agent uses an orchestrator model provided by the Microsoft Agent Framework. The framework analyzes the user's intent and routes the task to the correct tool.
 
-### Exemplo de Interação (Print de Resposta)
+**Flow Diagram:**
+`[User Prompt]` → `[AI Orchestrator (Azure)]` → `[ESG Agent]` → **`[Custom Tool: calculate_employment_cost.py]`** → `[Agent]` → `[Final Answer]`
 
-Aqui você vai **colar um print (screenshot)** da interação com seu agente.
+## 3. Demonstration (The "1 Functional Action")
+*(This is the screenshot of your *new* English output)*
 
-**Exemplo de Print:**
-> **Usuário:** "Quanto custaria contratar 1.500 pessoas por 6 meses, com o salário mínimo de R$ 1.518,00?"
->
-> **Agente ESG:** "O custo estimado para este programa seria de R$ 13.662.000,00. Este valor cobre o salário de 1.500 pessoas pelo período de 6 meses."
+The "1 Functional Action" for this challenge is a **calculation**. The agent identifies the user's intent to calculate a cost, extracts the parameters (`number_of_people`, `contract_months`, `minimum_wage`), and calls the custom Python tool to get the result.
 
-### Fluxo de Execução (A Arquitetura)
+**Example Interaction:**
+> **[PASTE YOUR NEW ENGLISH SCREENSHOT HERE]**
+> 
+> *Example of what the screenshot will show:*
+> **User:** "Hello! How much would it cost to hire 1,500 people for 6 months, at a minimum wage of 1518.00 BRL?"
+> **ESG Agent:** "The estimated cost to hire 1,500 people for 6 months, at a wage of BRL 1,518.00, is BRL 13,662,000.00."
 
-Este projeto utiliza um **orquestrador de IA** do framework da Microsoft para analisar a intenção do usuário e direcionar a tarefa para o agente correto.
+## 4. How to Run (Project Setup)
 
-**Diagrama do Fluxo:**
-`[Usuário]` → `[Orquestrador (Azure)]` → `[Agente ESG]` → `[Tool: calcular_custo.py]` → `[Agente ESG]` → `[Usuário]`
+This project is built to run in a cloud environment like **GitHub Codespaces**.
 
-*(Esta seção de arquitetura é o que mostra seu pensamento de "engenharia de produto" para o feedback da Motorola)*
-
-## 3. Como Usar (Configuração do Projeto)
-
-### Pré-requisitos
-* Uma conta no Portal Azure
+### Prerequisites
+* An Azure account with an **Azure OpenAI** resource deployed.
 * Python 3.10+
-* Git
-* Azure CLI
-* VS Code (recomendado)
+* Git & Azure CLI
 
-### Passo a Passo da Configuração
+### Setup Steps
 
-1.  **Clone o repositório:**
+1.  **Clone the repository & create a `.venv`:**
     ```bash
-    git clone [https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git](https://github.com/SEU_USUARIO/SEU_REPOSITORIO.git)
-    cd SEU_REPOSITORIO
+    git clone [https://github.com/a-learte/azure-copilot-challenge-esg.git](https://github.com/a-learte/azure-copilot-challenge-esg.git)
+    cd azure-copilot-challenge-esg
+    python3 -m venv .venv
+    source .venv/bin/activate
     ```
 
-2.  **Crie e ative o ambiente virtual:**
-    ```bash
-    python -m venv .venv
-    .venv\Scripts\activate
-    ```
-
-3.  **Faça login no Azure (Obrigatório):**
-    ```bash
-    az login
-    ```
-
-4.  **Instale as dependências:**
+2.  **Install dependencies:**
     ```bash
     pip install -r requirements.txt
     ```
-    *(**Importante:** Você deve criar um arquivo `requirements.txt` no seu repositório com o conteúdo: `openai`, `azure-ai-projects`, `azure-identity`, `agent-framework`, `python-dotenv`)*
 
-5.  **Configure o arquivo `.env`:**
-    Crie um arquivo `.env` e preencha com suas chaves do Azure OpenAI, conforme o notebook `criacao_agentes.ipynb`.
+3.  **Configure Environment (`.env`):**
+    Create a `.env` file and populate it with your Azure OpenAI credentials (Endpoint, API Key, and Deployment Name).
 
-6.  **Execute o Notebook:**
-    Abra o notebook principal do projeto no VS Code e execute as células.
+4.  **Run the Notebook:**
+    Open and run the `esg_agent_challenge.ipynb` notebook.
 
-## 4. Referências e Recursos
-*(Requisito de Avaliação 4.c)*
+## 5. Linked Resources
 
-* **Azure Frontier Girls (Repositório Base):** [Link para o repositório do programa da Microsoft]
-* **Documentação do Azure AI Foundry:** [Link do Foundry]
-* **Análise de Dados (TCC):** Este agente é baseado nos modelos de custo desenvolvidos no meu TCC do MBA em Data Science & Analytics (USP). O repositório completo da análise pode ser encontrado aqui: [Link para o seu repositório do TCC]
+* **Azure Frontier Girls:** The Microsoft program this challenge is part of.
+* **Data Analysis (MBA Thesis):** This agent's business logic is based on the cost models developed in my MBA Data Science & Analytics Thesis (USP). The full data analysis repository can be found here: [Link to your TCC Repo]
 
-## 5. Autora
+## 6. Author
 
 * **Amanda Morais** - [LinkedIn](https://www.linkedin.com/in/amandalearte)
