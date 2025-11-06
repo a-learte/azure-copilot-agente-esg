@@ -9,7 +9,6 @@ This project is a functional AI Copilot built as part of the **Azure Frontier Gi
 ---
 
 ## 1. Project Objective & Problem
-*(Addresses technical product engineering & AI architecture)*
 
 ### The Problem
 Public policy managers and ESG (Environmental, Social, Governance) analysts often need to make quick, data-driven decisions to fund sustainability and social inclusion programs. However, rapidly estimating the cost of initiatives, such as green employment programs, is a complex task that often relies on manual calculations.
@@ -20,7 +19,6 @@ This project is an **AI Agent (Copilot)** that acts as an "ESG Public Policy Ass
 Its goal is to provide a simple, conversational interface for a manager to estimate the cost of a green employment program. The agent uses a custom-built "Tool" to perform the business logic (the calculation), demonstrating an architecture where the AI (the "brain") uses specialized tools (the "muscles") to solve a problem.
 
 ## 2. Architecture & Execution Flow
-*(Demonstrates understanding of AI systems, as requested in the Motorola feedback)*
 
 This agent uses an orchestrator model provided by the Microsoft Agent Framework. The framework analyzes the user's intent and routes the task to the correct tool.
 
@@ -28,16 +26,12 @@ This agent uses an orchestrator model provided by the Microsoft Agent Framework.
 `[User Prompt]` → `[AI Orchestrator (Azure)]` → `[ESG Agent]` → **`[Custom Tool: calculate_employment_cost.py]`** → `[Agent]` → `[Final Answer]`
 
 ## 3. Demonstration (The "1 Functional Action")
-*(This is the screenshot of your *new* English output)*
 
 The "1 Functional Action" for this challenge is a **calculation**. The agent identifies the user's intent to calculate a cost, extracts the parameters (`number_of_people`, `contract_months`, `minimum_wage`), and calls the custom Python tool to get the result.
 
-**Example Interaction:**
-> **[PASTE YOUR NEW ENGLISH SCREENSHOT HERE]**
-> 
-> *Example of what the screenshot will show:*
-> **User:** "Hello! How much would it cost to hire 1,500 people for 6 months, at a minimum wage of 1518.00 BRL?"
-> **ESG Agent:** "The estimated cost to hire 1,500 people for 6 months, at a wage of BRL 1,518.00, is BRL 13,662,000.00."
+![alt text](<Agente Demonstration 1.png>)
+
+![alt text](<Agent Demonstration 2.png>)
 
 ## 4. How to Run (Project Setup)
 
