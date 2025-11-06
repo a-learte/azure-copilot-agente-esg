@@ -66,7 +66,7 @@ This project is built to run in a cloud environment like **GitHub Codespaces**.
 ## 5. Linked Resources
 
 * **Azure Frontier Girls:** The Microsoft program this challenge is part of.
-* **Data Analysis (MBA Thesis):** This agent's business logic is based on the cost models developed in my MBA Data Science & Analytics Thesis (USP). The full data analysis repository can be found here: [Link to your TCC Repo]
+* **Data Analysis (MBA Thesis):** This agent's business logic is based on the cost models developed in my MBA Data Science & Analytics Thesis (USP). The full data analysis repository can be found here: https://github.com/a-learte/ndvi-empregabilidade-verde
 
 ## 6. Author
 
