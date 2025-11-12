@@ -25,43 +25,14 @@ This agent uses an orchestrator model provided by the Microsoft Agent Framework.
 **Flow Diagram:**
 `[User Prompt]` → `[AI Orchestrator (Azure)]` → `[ESG Agent]` → **`[Custom Tool: calculate_employment_cost.py]`** → `[Agent]` → `[Final Answer]`
 
-## 3. Demonstration (The "1 Functional Action")
+## 3. Demonstration (The "Functional Action")
 
-The "1 Functional Action" for this challenge is a **calculation**. The agent identifies the user's intent to calculate a cost, extracts the parameters (`number_of_people`, `contract_months`, `minimum_wage`), and calls the custom Python tool to get the result.
+The "Functional Action" for this challenge is a **calculation**. The agent identifies the user's intent to calculate a cost, extracts the parameters (`number_of_people`, `contract_months`, `minimum_wage`), and calls the custom Python tool to get the result.
 
 ![alt text](<Agente Demonstration 1.png>)
 
 ![alt text](<Agent Demonstration 2.png>)
 
-## 4. How to Run (Project Setup)
-
-This project is built to run in a cloud environment like **GitHub Codespaces**.
-
-### Prerequisites
-* An Azure account with an **Azure OpenAI** resource deployed.
-* Python 3.10+
-* Git & Azure CLI
-
-### Setup Steps
-
-1.  **Clone the repository & create a `.venv`:**
-    ```bash
-    git clone [https://github.com/a-learte/azure-copilot-challenge-esg.git](https://github.com/a-learte/azure-copilot-challenge-esg.git)
-    cd azure-copilot-challenge-esg
-    python3 -m venv .venv
-    source .venv/bin/activate
-    ```
-
-2.  **Install dependencies:**
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3.  **Configure Environment (`.env`):**
-    Create a `.env` file and populate it with your Azure OpenAI credentials (Endpoint, API Key, and Deployment Name).
-
-4.  **Run the Notebook:**
-    Open and run the `esg_agent_challenge.ipynb` notebook.
 
 ## 5. Linked Resources
 
