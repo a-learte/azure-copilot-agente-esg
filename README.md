@@ -22,15 +22,22 @@ Its goal is to provide a simple, conversational interface for a manager to estim
 
 This agent uses an orchestrator model provided by the Microsoft Agent Framework. The framework analyzes the user's intent and routes the task to the correct tool.
 
-**Flow Diagram:**
-`[User Prompt]` → `[AI Orchestrator (Azure)]` → `[ESG Agent]` → **`[Custom Tool: calculate_employment_cost.py]`** → `[Agent]` → `[Final Answer]`
-
-
+```mermaid
+graph LR
+    A[User Prompt] -->|Asks about Cost| B(Orchestrator)
+    B -->|Identifies Intent| C{ESG Agent}
+    C -->|Calls Tool| D[calculate_employment_cost]
+    D -->|Validates & Calculates| D
+    D -->|Returns Value BRL| C
+    C -->|Final Answer| A
+    
+    style C fill:#d4f1f4,stroke:#0078d4,stroke-width:2px
+    style D fill:#e1f5fe,stroke:#0078d4,stroke-width:2px
+``` 
 
 ## 3. Demonstration (The "Functional Action")
 
 The "Functional Action" for this challenge is a **calculation**. The agent identifies the user's intent to calculate a cost, extracts the parameters (`number_of_people`, `contract_months`, `minimum_wage`), and calls the custom Python tool to get the result.
-
 
 ![alt text](<Executing_agente_ESG.png>)
 
@@ -45,4 +52,3 @@ The "Functional Action" for this challenge is a **calculation**. The agent ident
 ## 5. Author
 
 * **Amanda Morais** - [LinkedIn](https://www.linkedin.com/in/amandalearte)
-
