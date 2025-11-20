@@ -31,7 +31,7 @@ The "Functional Action" for this challenge is a **calculation**. The agent ident
 
 ![alt text](<Executing_agente_ESG.png>)
 
-![alt text](<Executing_agente_ESG.png>)
+![alt text](<Result_agente_ESG.png>)
 
 
 ## 5. Linked Resources
