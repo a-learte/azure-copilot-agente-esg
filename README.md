@@ -42,3 +42,44 @@ The "Functional Action" for this challenge is a **calculation**. The agent ident
 ## 6. Author
 
 * **Amanda Morais** - [LinkedIn](https://www.linkedin.com/in/amandalearte)
+
+
+
+
+
+
+# 🤖 ESG Agent: Green Employment Cost Calculator
+
+![Azure](https://img.shields.io/badge/Azure-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+
+This project is a functional AI Copilot built as part of the **Azure Frontier Girls Challenge** by Microsoft & WoMakersCode. It serves as a practical demonstration of building an "AI Agent" with custom tools, leveraging Azure OpenAI services.
+
+---
+
+## 1. Project Objective & Problem
+
+### The Problem
+Public policy managers and ESG (Environmental, Social, Governance) analysts often need to make quick, data-driven decisions to fund sustainability and social inclusion programs. However, rapidly estimating the cost of initiatives, such as green employment programs, is a complex task that often relies on manual calculations.
+
+### The Agent's Objective (The Product)
+This project is an **AI Agent (Copilot)** that acts as an "ESG Public Policy Assistant."
+
+Its goal is to provide a simple, conversational interface for a manager to estimate the cost of a green employment program. The agent uses a custom-built "Tool" to perform the business logic (the calculation), demonstrating an architecture where the AI (the "brain") uses specialized tools (the "muscles") to solve a problem.
+
+## 2. Architecture & Execution Flow
+
+This agent uses an orchestrator model provided by the Microsoft Agent Framework. The framework analyzes the user's intent and routes the task to the correct tool.
+
+```mermaid
+graph LR
+    A[User Prompt] -->|Asks about Cost| B(Orchestrator)
+    B -->|Identifies Intent| C{ESG Agent}
+    C -->|Calls Tool| D[calculate_employment_cost]
+    D -->|Validates & Calculates| D
+    D -->|Returns Value BRL| C
+    C -->|Final Answer| A
+    
+    style C fill:#d4f1f4,stroke:#0078d4,stroke-width:2px
+    style D fill:#e1f5fe,stroke:#0078d4,stroke-width:2px
