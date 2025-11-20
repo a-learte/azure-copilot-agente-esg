@@ -29,9 +29,9 @@ This agent uses an orchestrator model provided by the Microsoft Agent Framework.
 
 The "Functional Action" for this challenge is a **calculation**. The agent identifies the user's intent to calculate a cost, extracts the parameters (`number_of_people`, `contract_months`, `minimum_wage`), and calls the custom Python tool to get the result.
 
-![alt text](<Agente Demonstration 1.png>)
+![alt text](<Executing_agente_ESG.png>)
 
-![alt text](<Agent Demonstration 2.png>)
+![alt text](<Executing_agente_ESG.png>)
 
 
 ## 5. Linked Resources
